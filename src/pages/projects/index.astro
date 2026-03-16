@@ -1,36 +1,20 @@
 ---
 import Base from '@/layouts/Base.astro';
-import ProjectCard from '@/components/ProjectCard.astro';
-import { getCollection } from 'astro:content';
-
-const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 ---
 <Base
   title="Projects"
-  description="A selection of engineering work — BFF architectures, GraphQL schemas, data migrations, and full-stack systems delivered end-to-end."
+  description="Engineering work and AI-built projects — from full-stack systems to autonomous agent pipelines."
 >
   <div class="max-w-5xl mx-auto px-4 py-20">
     <header class="mb-16">
       <p class="text-accent-light text-sm font-medium uppercase tracking-widest mb-3">Projects</p>
-      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-6">Engineering work.</h1>
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-6">Work in progress.</h1>
       <p class="text-xl text-text-secondary max-w-2xl leading-relaxed">
-        Delivered end-to-end. Each project represents a problem owned, not just a feature shipped.
+        More coming soon. In the meantime, check out what the Digital Enterprise agent fleet has been building.
       </p>
     </header>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {projects.map(project => (
-        <ProjectCard
-          title={project.data.title}
-          description={project.data.description}
-          stack={project.data.stack}
-          role={project.data.role}
-          period={project.data.period}
-          slug={project.slug}
-          featured={project.data.featured}
-        />
-      ))}
-
       <!-- Digital Enterprise card -->
       <a
         href="/digital-enterprise"
