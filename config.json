@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-luiszmarques",
+  "display_name": "Portfolio — Luis Marques",
+  "repo": "Agents-Digital-Enterprise/portfolio-luiszmarques",
+  "default_branch": "main",
+  "stack": ["Astro", "TypeScript", "TailwindCSS", "Vue (islands)"],
+  "viking_memory_key": "viking://memories/project/portfolio-luiszmarques",
+  "filesystem_root": "/home/laga/agency-agents/projects/portfolio-luiszmarques",
+  "owner_github": "LuisZMarques",
+  "owner_blog": "www.luisdev.work"
+}
