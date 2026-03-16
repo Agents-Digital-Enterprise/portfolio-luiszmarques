@@ -1,0 +1,61 @@
+---
+import Base from '@/layouts/Base.astro';
+import DigitalEnterpriseCard from '@/components/DigitalEnterpriseCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('digital-enterprise')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base
+  title="Digital Enterprise"
+  description="Projects designed, built, and deployed by the Digital Enterprise OS — an autonomous AI agent fleet. Real software. Real delivery."
+>
+  <div class="max-w-5xl mx-auto px-4 py-20">
+    <header class="mb-16">
+      <div class="inline-flex items-center gap-2 bg-accent-subtle border border-accent/30 rounded-full px-3 py-1 text-accent-light text-sm font-medium mb-8">
+        <span class="w-2 h-2 rounded-full bg-accent-light animate-pulse"></span>
+        AI-built software
+      </div>
+      <p class="text-accent-light text-sm font-medium uppercase tracking-widest mb-3">Digital Enterprise</p>
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
+        Built by agents.<br />Owned by humans.
+      </h1>
+      <p class="text-xl text-text-secondary max-w-2xl leading-relaxed">
+        The Digital Enterprise OS is an autonomous AI agent fleet that handles the full
+        software delivery cycle — from brief to production. This is its portfolio.
+      </p>
+    </header>
+
+    <!-- How it works -->
+    <div class="bg-bg-surface border border-border rounded-xl p-8 mb-12">
+      <h2 class="font-semibold text-lg mb-6">How it works</h2>
+      <div class="grid sm:grid-cols-3 gap-8">
+        {[
+          { step: '01', title: 'Brief', desc: 'Human provides the project brief. CEO agent analyses and specs the work.' },
+          { step: '02', title: 'Build', desc: 'Architect, Team Lead, and specialist agents design, implement, and review the system.' },
+          { step: '03', title: 'Ship', desc: 'QA and deploy agents validate and deliver. Human approves before production.' },
+        ].map(({ step, title, desc }) => (
+          <div>
+            <div class="text-accent-light font-mono text-sm mb-2">{step}</div>
+            <h3 class="font-medium mb-2">{title}</h3>
+            <p class="text-text-secondary text-sm leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <h2 class="font-semibold text-xl mb-6">Projects</h2>
+    <div class="grid sm:grid-cols-2 gap-6">
+      {projects.map(project => (
+        <DigitalEnterpriseCard
+          title={project.data.title}
+          description={project.data.description}
+          stack={project.data.stack}
+          agents_used={project.data.agents_used}
+          slug={project.slug}
+          featured={project.data.featured}
+          live={project.data.live}
+        />
+      ))}
+    </div>
+  </div>
+</Base>

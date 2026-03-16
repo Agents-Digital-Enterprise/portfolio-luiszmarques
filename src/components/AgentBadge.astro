@@ -1,0 +1,23 @@
+---
+interface Props {
+  role: string;
+}
+const { role } = Astro.props;
+
+const roleEmoji: Record<string, string> = {
+  'CEO': '👔',
+  'Architect': '🏛️',
+  'Team Lead': '🔧',
+  'QA Engineer': '🔍',
+  'SEO Specialist': '📈',
+  'Accessibility Specialist': '♿',
+  'UI Designer': '🎨',
+  'Content Strategist': '✍️',
+};
+
+const emoji = roleEmoji[role] ?? '🤖';
+---
+<span class="inline-flex items-center gap-1.5 bg-bg-surface border border-border rounded-full px-3 py-1 text-xs text-text-secondary">
+  <span>{emoji}</span>
+  {role}
+</span>
