@@ -1,0 +1,25 @@
+---
+import Base from '@/layouts/Base.astro';
+import SkillGroup from '@/components/SkillGroup.astro';
+import { skillGroups } from '@/data/skills';
+---
+<Base
+  title="Skills"
+  description="Technical expertise across Vue 3, Cloudflare Workers, GraphQL Federation, AWS, and full-cycle delivery."
+>
+  <div class="max-w-5xl mx-auto px-4 py-20">
+    <header class="mb-16">
+      <p class="text-accent-light text-sm font-medium uppercase tracking-widest mb-3">Skills</p>
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-6">Depth over breadth.</h1>
+      <p class="text-xl text-text-secondary max-w-2xl leading-relaxed">
+        Six domains, each owned end-to-end. Not a technology checklist — a delivery stack.
+      </p>
+    </header>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {skillGroups.map(group => (
+        <SkillGroup group={group} />
+      ))}
+    </div>
+  </div>
+</Base>

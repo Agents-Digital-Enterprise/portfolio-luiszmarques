@@ -1,0 +1,25 @@
+---
+import type { SkillGroup } from '@/data/skills';
+
+interface Props {
+  group: SkillGroup;
+}
+const { group } = Astro.props;
+---
+<div class="bg-bg-surface border border-border rounded-xl p-6 hover:border-accent/30 transition-colors">
+  <h2 class="font-semibold text-lg mb-1">{group.domain}</h2>
+  <p class="text-text-muted text-sm mb-5">{group.description}</p>
+  <ul class="space-y-2">
+    {group.skills.map(skill => (
+      <li class="flex flex-col sm:flex-row sm:items-center gap-1">
+        <span class="flex items-center gap-2 text-text-primary text-sm font-medium min-w-0">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent-light flex-shrink-0"></span>
+          {skill.name}
+        </span>
+        {skill.note && (
+          <span class="text-text-muted text-xs sm:ml-auto">{skill.note}</span>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>
