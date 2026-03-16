@@ -11,13 +11,13 @@ const { group } = Astro.props;
   <p class="text-text-muted text-sm mb-5">{group.description}</p>
   <ul class="space-y-2">
     {group.skills.map(skill => (
-      <li class="flex flex-col sm:flex-row sm:items-center gap-1">
-        <span class="flex items-center gap-2 text-text-primary text-sm font-medium min-w-0">
+      <li class="flex flex-col gap-0.5">
+        <span class="flex items-center gap-2 text-text-primary text-sm font-medium">
           <span class="w-1.5 h-1.5 rounded-full bg-accent-light flex-shrink-0"></span>
           {skill.name}
         </span>
         {skill.note && (
-          <span class="text-text-muted text-xs sm:ml-auto">{skill.note}</span>
+          <span class="text-text-muted text-xs pl-3.5">{skill.note}</span>
         )}
       </li>
     ))}

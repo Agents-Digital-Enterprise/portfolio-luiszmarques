@@ -30,6 +30,31 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
           featured={project.data.featured}
         />
       ))}
+
+      <!-- Digital Enterprise card -->
+      <a
+        href="/digital-enterprise"
+        class="group flex flex-col justify-between bg-accent-subtle border border-accent/30 rounded-xl p-6 hover:border-accent/60 transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-accent-light focus-visible:outline-offset-2"
+      >
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-2 h-2 rounded-full bg-accent-light animate-pulse"></span>
+            <span class="text-xs text-accent-light font-medium uppercase tracking-widest">AI-built</span>
+          </div>
+          <h3 class="font-semibold text-text-primary group-hover:text-accent-light transition-colors leading-snug mb-2">
+            Digital Enterprise
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            Projects designed, built, and shipped by an autonomous AI agent fleet — with human direction.
+          </p>
+        </div>
+        <div class="mt-5 flex items-center gap-1.5 text-accent-light text-sm font-medium">
+          View projects
+          <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </div>
+      </a>
     </div>
   </div>
 </Base>
