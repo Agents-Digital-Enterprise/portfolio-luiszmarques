@@ -1,0 +1,71 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/og-image.png',
+  canonicalURL = Astro.url.href,
+} = Astro.props;
+
+const fullTitle = title === 'Luis Marques' ? title : `${title} — Luis Marques`;
+---
+<!doctype html>
+<html lang="en" class="bg-bg text-text-primary scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Luis Marques" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site).href} />
+
+    <!-- JSON-LD (homepage only) -->
+    {Astro.url.pathname === '/' && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Luis Marques',
+        url: 'https://www.luisdev.work',
+        sameAs: ['https://github.com/LuisZMarques'],
+        jobTitle: 'Senior Full-Stack Engineer',
+        knowsAbout: ['Vue.js', 'TypeScript', 'Cloudflare Workers', 'GraphQL', 'AWS'],
+      })} />
+    )}
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="min-h-screen flex flex-col antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:outline-none">
+      Skip to main content
+    </a>
+    <Header currentPath={Astro.url.pathname} />
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
