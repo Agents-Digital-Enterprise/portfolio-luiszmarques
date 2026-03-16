@@ -12,7 +12,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
       </svg>
     </button>
-    <div v-if="open" class="absolute top-full left-0 right-0 bg-bg-surface border-b border-border px-4 py-6 flex flex-col gap-4 md:hidden">
+    <div v-if="open" class="fixed top-16 left-0 right-0 bg-bg-surface border-b border-border px-4 py-6 flex flex-col gap-4 md:hidden z-50">
       <a v-for="link in links" :key="link.href" :href="link.href" class="text-text-secondary hover:text-text-primary text-lg transition-colors focus-visible:outline-2 focus-visible:outline-accent-light focus-visible:outline-offset-2 rounded" @click="open = false">
         {{ link.label }}
       </a>
