@@ -2,7 +2,7 @@
   <div>
     <button
       @click="open = !open"
-      class="text-text-secondary hover:text-text-primary p-2 transition-colors"
+      class="text-text-secondary hover:text-text-primary p-2 transition-colors focus-visible:outline-2 focus-visible:outline-accent-light focus-visible:outline-offset-2 rounded"
       :aria-label="open ? 'Close menu' : 'Open menu'"
     >
       <svg v-if="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -13,7 +13,7 @@
       </svg>
     </button>
     <div v-if="open" class="absolute top-full left-0 right-0 bg-bg-surface border-b border-border px-4 py-6 flex flex-col gap-4 md:hidden">
-      <a v-for="link in links" :key="link.href" :href="link.href" class="text-text-secondary hover:text-text-primary text-lg transition-colors" @click="open = false">
+      <a v-for="link in links" :key="link.href" :href="link.href" class="text-text-secondary hover:text-text-primary text-lg transition-colors focus-visible:outline-2 focus-visible:outline-accent-light focus-visible:outline-offset-2 rounded" @click="open = false">
         {{ link.label }}
       </a>
     </div>
