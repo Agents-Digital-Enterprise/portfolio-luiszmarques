@@ -57,17 +57,5 @@ const { Content } = await project.render();
     <div class="prose prose-invert prose-violet max-w-none">
       <Content />
     </div>
-
-    {project.data.live && (
-      <div class="mt-12 pt-8 border-t border-border">
-        <a href={project.data.live} target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-medium px-6 py-3 rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-accent-light focus-visible:outline-offset-2">
-          View live site
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-          </svg>
-        </a>
-      </div>
-    )}
   </article>
 </Base>
