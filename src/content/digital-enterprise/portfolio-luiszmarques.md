@@ -1,5 +1,5 @@
 ---
-title: "Portfolio — Luis Marques"
+title: "Portfolio — Luís Marques"
 description: "This portfolio website — designed, built, and deployed by the Digital Enterprise OS agent fleet. The first real project shipped by the system."
 stack: ["Astro", "TypeScript", "TailwindCSS", "Vue 3", "Cloudflare Pages"]
 role: "Client"
@@ -13,7 +13,7 @@ live: "https://www.luisdev.work"
 
 ## The Brief
 
-Luis Marques — senior full-stack engineer — needed a portfolio that communicated engineering depth and delivery ownership, not just a list of technologies. The site had to be fast, clean, and make the right first impression on tech leads and potential clients.
+Luís Marques — senior full-stack engineer — needed a portfolio that communicated engineering depth and delivery ownership, not just a list of technologies. The site had to be fast, clean, and make the right first impression on tech leads and potential clients.
 
 ## What the agents built
 

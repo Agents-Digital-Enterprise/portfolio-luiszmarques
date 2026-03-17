@@ -16,7 +16,7 @@ const {
   canonicalURL = Astro.url.href,
 } = Astro.props;
 
-const fullTitle = title === 'Luis Marques' ? title : `${title} — Luis Marques`;
+const fullTitle = title === 'Luís Marques' ? title : `${title} — Luís Marques`;
 ---
 <!doctype html>
 <html lang="en" class="bg-bg text-text-primary scroll-smooth">
@@ -35,7 +35,7 @@ const fullTitle = title === 'Luis Marques' ? title : `${title} — Luis Marques`
     <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Luis Marques" />
+    <meta property="og:site_name" content="Luís Marques" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -48,7 +48,7 @@ const fullTitle = title === 'Luis Marques' ? title : `${title} — Luis Marques`
       <script type="application/ld+json" set:html={JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Person',
-        name: 'Luis Marques',
+        name: 'Luís Marques',
         url: 'https://www.luisdev.work',
         sameAs: ['https://github.com/LuisZMarques'],
         jobTitle: 'Senior Full-Stack Engineer',
